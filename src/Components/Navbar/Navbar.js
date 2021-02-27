@@ -7,7 +7,7 @@ import Logo from "../Logo/Logo";
 const Navbar = ({ links }) => {
   return (
     <nav className="flex justify-between items-center px-5 h-16 bg-blue-900 text-blue-200">
-      <NavLink to="/">
+      <NavLink to="/home">
         <Logo />
       </NavLink>
       <ul className="flex items-center">
