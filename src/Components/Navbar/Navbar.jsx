@@ -22,25 +22,6 @@ const Navbar = ({ links }) => {
             </li>
           );
         })}
-        {/* <li className="px-4 m-0 ">
-          <NavLink exact to="/" activeClassName="font-bold text-white">
-            Home
-          </NavLink>
-        </li>
-        <li className="px-4 h-full flex items-center">
-          <NavLink
-            to="/deals"
-            className="block w-full"
-            activeClassName="h-full"
-          >
-            Deals
-          </NavLink>
-        </li>
-        <li className="px-4 h-full flex items-center">
-          <NavLink to="/cart" className="block w-full" activeClassName="h-full">
-            Cart
-          </NavLink>
-        </li> */}
       </ul>
     </nav>
   );
