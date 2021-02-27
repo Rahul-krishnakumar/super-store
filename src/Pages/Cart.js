@@ -1,14 +1,14 @@
 import React from "react";
 
-import Navbar from "../Navbar/Navbar";
+import Navbar from "../Components/Navbar/Navbar";
 
-const Home = () => {
+const Cart = () => {
   return (
     <div>
       <Navbar links={[{ Home: "/" }, { Deals: "/deals" }, { Cart: "/cart" }]} />
-      Home Page
+      Cart Page
     </div>
   );
 };
 
-export default Home;
+export default Cart;

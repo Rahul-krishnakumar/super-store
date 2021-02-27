@@ -13,13 +13,13 @@ const Navbar = ({ links }) => {
       <ul className="flex items-center">
         {links.map((link) => {
           return (
-            <li key={Math.random()} className="px-4 m-0">
+            <li key={Object.entries(link)[1][1]} className="px-4 m-0">
               <NavLink
                 exact
-                to={Object.values(link).toString()}
+                to={Object.entries(link)[0][0].toString()}
                 activeClassName="font-bold text-white"
               >
-                {Object.keys(link)}
+                {Object.entries(link)[0][0]}
               </NavLink>
             </li>
           );

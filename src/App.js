@@ -2,9 +2,9 @@ import React from "react";
 
 import { Switch, Route } from "react-router-dom";
 
-import Home from "./Components/Pages/Home";
-import Deals from "./Components/Pages/Deals";
-import Cart from "./Components/Pages/Cart";
+import Home from "./Pages/Home";
+import Deals from "./Pages/Deals";
+import Cart from "./Pages/Cart";
 
 function App() {
   return (
