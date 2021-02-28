@@ -1,27 +1,44 @@
 import React from "react";
 
+import PropTypes from "prop-types";
+
+import Ratings from "../Ratings/Ratings";
+import Badge from "../Badge/Badge";
+
 const ItemCard = ({ itemData }) => {
+  const { imageUrl, name, avgRating, stockCount, isOnSale, price } = itemData;
+  let badge = stockCount === 0 ? "empty" : isOnSale ? "sale" : null;
   return (
     <div className="w-full mt-4 border-2 rounded-md shadow-sm p-5 flex flex-col">
-      <img
-        src={itemData.imageUrl}
-        alt={itemData.name}
-        className="w-full h-48"
-      />
-      <h3 className="text-lg font-semibold mt-10">{itemData.name}</h3>
-      <div>
-        <span className="mr-4">{itemData.avgRating}</span>
-        <span>{itemData.stockCount}</span>
+      <img src={imageUrl} alt={name} className="w-full h-48" />
+      <h3 className="text-lg font-semibold mt-10">{name}</h3>
+      <div className="flex justify-between -ml-1">
+        <Ratings rating={avgRating} />
+        <Badge type={badge} />
       </div>
       <div>
-        <span className="mr-4 font-medium">&#36;{itemData.price}</span>
-        <span>badge</span>
+        <span className="inline-block mt-2 font-semibold">&#36;{price}</span>
       </div>
-      <button className="w-4/5 mt-5 mx-auto p-2 bg-purple-900 rounded text-purple-200">
-        View Item
-      </button>
+      <div className="flex justify-evenly">
+        <button className="inline-block mt-5 p-2 bg-indigo-600 rounded text-indigo-50 font-semibold">
+          View Item
+        </button>
+        <button className="inline-block mt-5 p-2 bg-yellow-400 rounded text-yellow-900 font-semibold">
+          Add to Cart
+        </button>
+      </div>
     </div>
   );
+};
+
+ItemCard.propTypes = {
+  itemData: PropTypes.shape({
+    imageUrl: PropTypes.string,
+    name: PropTypes.string,
+    avgRating: PropTypes.number,
+    stockCount: PropTypes.number,
+    price: PropTypes.number,
+  }),
 };
 
 export default ItemCard;
