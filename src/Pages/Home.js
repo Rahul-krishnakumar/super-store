@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import Navbar from "../Components/Navbar/Navbar";
 import ProductGrid from "../Components/ProductGrid/ProductGrid";
 
 const Home = () => {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    fetch(`https://gp-super-store-api.herokuapp.com/item/list/?size=12`)
+      .then((res) => res.json())
+      .then((data) => {
+        setItems(data.items);
+      })
+      .catch((error) => console.log(error));
+  }, []);
   return (
     <div>
       <Navbar
@@ -13,7 +23,7 @@ const Home = () => {
           { Cart: "/cart", id: 3 },
         ]}
       />
-      <ProductGrid />
+      <ProductGrid data={items} />
     </div>
   );
 };

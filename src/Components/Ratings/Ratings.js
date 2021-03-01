@@ -22,22 +22,22 @@ const Ratings = ({ rating }) => {
   }
   const itemRating = (
     <ul className="flex items-start">
-      {stars.map((star) => {
+      {stars.map((star, i) => {
         if (star === "full") {
           return (
-            <li>
+            <li key={i}>
               <FullStar className="w-7" />
             </li>
           );
         } else if (star === "half") {
           return (
-            <li>
+            <li key={i}>
               <HalfStar className="w-5 h-4.5" />
             </li>
           );
         } else {
           return (
-            <li>
+            <li key={i}>
               <EmptyStar className="w-5 h-4.5" />
             </li>
           );
