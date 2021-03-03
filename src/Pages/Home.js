@@ -7,7 +7,7 @@ const Home = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch(`https://gp-super-store-api.herokuapp.com/item/list/?size=12`)
+    fetch(`https://gp-super-store-api.herokuapp.com/item/list/?size=15`)
       .then((res) => res.json())
       .then((data) => {
         setItems(data.items);

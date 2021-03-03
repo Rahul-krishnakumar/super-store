@@ -20,5 +20,5 @@ const Badge = ({ type }) => {
 export default Badge;
 
 Badge.propTypes = {
-  type: PropTypes.string,
+  type: PropTypes.oneOf(["sale", "empty"]),
 };

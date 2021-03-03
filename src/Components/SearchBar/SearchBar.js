@@ -7,7 +7,7 @@ const SearchBar = () => {
     <div className="-mt-4 mb-10">
       <form className="w-100 mx-auto flex justify-center gap-3">
         <input
-          class="w-60 border-b-2 border-gray-200 py-2 px-1 text-gray-700 placeholder-gray-400  leading-tight outline-none focus:border-blue-800"
+          className="w-60 border-b-2 border-gray-200 py-2 px-1 text-gray-700 placeholder-gray-400  leading-tight outline-none focus:border-blue-800"
           type="text"
           placeholder="Search"
         />

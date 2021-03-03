@@ -16,7 +16,7 @@ const Navbar = ({ links }) => {
             <li key={Object.entries(link)[1][1]} className="px-4 m-0">
               <NavLink
                 exact
-                to={Object.entries(link)[0][0].toString()}
+                to={`/${Object.entries(link)[0][0].toString().toLowerCase()}`}
                 activeClassName="font-bold text-white"
               >
                 {Object.entries(link)[0][0]}
