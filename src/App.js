@@ -1,10 +1,11 @@
 import React from "react";
 
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 
-import Home from "./Components/Pages/Home";
-import Deals from "./Components/Pages/Deals";
-import Cart from "./Components/Pages/Cart";
+import Home from "./Pages/Home";
+import Deals from "./Pages/Deals";
+import Cart from "./Pages/Cart";
+import Product from "./Pages/Product";
 
 function App() {
   return (
@@ -16,8 +17,14 @@ function App() {
         <Route path="/cart">
           <Cart />
         </Route>
-        <Route path="/">
+        <Route path="/home">
           <Home />
+        </Route>
+        <Route path="/item/:id">
+          <Product />
+        </Route>
+        <Route path="/">
+          <Redirect to="/home" />
         </Route>
       </Switch>
     </div>
