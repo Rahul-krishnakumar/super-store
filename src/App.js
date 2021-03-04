@@ -9,7 +9,7 @@ import Product from "./Pages/Product";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App overflow-x-hidden">
       <Switch>
         <Route path="/deals">
           <Deals />
