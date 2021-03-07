@@ -26340,6 +26340,10 @@ video {
   grid-template-rows: none;
 }
 
+.grid-rows-layout {
+  grid-template-rows: 4rem auto;
+}
+
 .auto-rows-auto {
   grid-auto-rows: auto;
 }
@@ -55444,6 +55448,10 @@ video {
     grid-template-rows: none;
   }
 
+  .sm\:grid-rows-layout {
+    grid-template-rows: 4rem auto;
+  }
+
   .sm\:auto-rows-auto {
     grid-auto-rows: auto;
   }
@@ -84516,6 +84524,10 @@ video {
 
   .md\:grid-rows-none {
     grid-template-rows: none;
+  }
+
+  .md\:grid-rows-layout {
+    grid-template-rows: 4rem auto;
   }
 
   .md\:auto-rows-auto {
@@ -113592,6 +113604,10 @@ video {
     grid-template-rows: none;
   }
 
+  .lg\:grid-rows-layout {
+    grid-template-rows: 4rem auto;
+  }
+
   .lg\:auto-rows-auto {
     grid-auto-rows: auto;
   }
@@ -142666,6 +142682,10 @@ video {
     grid-template-rows: none;
   }
 
+  .xl\:grid-rows-layout {
+    grid-template-rows: 4rem auto;
+  }
+
   .xl\:auto-rows-auto {
     grid-auto-rows: auto;
   }
@@ -171738,6 +171758,10 @@ video {
 
   .\32xl\:grid-rows-none {
     grid-template-rows: none;
+  }
+
+  .\32xl\:grid-rows-layout {
+    grid-template-rows: 4rem auto;
   }
 
   .\32xl\:auto-rows-auto {

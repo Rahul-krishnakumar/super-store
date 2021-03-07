@@ -4,7 +4,7 @@ import Navbar from "../Components/Navbar/Navbar";
 
 const Cart = () => {
   return (
-    <div>
+    <div className="grid grid-rows-layout">
       <Navbar
         links={[
           { Home: "/", id: 1 },
@@ -12,7 +12,7 @@ const Cart = () => {
           { Cart: "/cart", id: 3 },
         ]}
       />
-      Cart Page
+      Cart page
     </div>
   );
 };
