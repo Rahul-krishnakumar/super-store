@@ -6,7 +6,6 @@ import ErrorMessage from "../ErrorComponent/ErrorComponent";
 
 const ProductGrid = ({ data }) => {
   const [products, setProducts] = useState(data);
-  console.log(products);
 
   return (
     <div className="xl:max-w-5xl md:max-w-2xl max-w-xs mx-auto my-10">
@@ -14,7 +13,6 @@ const ProductGrid = ({ data }) => {
       {products.length > 0 ? (
         <div className="grid xl:grid-cols-3 gap-14 justify-items-center md:grid-cols-2 grid-cols-1">
           {products.map((item) => {
-            console.log(item);
             return <ProductCard key={item["_id"]} itemData={item} />;
           })}
         </div>
