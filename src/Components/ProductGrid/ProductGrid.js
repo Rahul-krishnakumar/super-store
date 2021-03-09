@@ -1,21 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import ProductCard from "../ProductCard/ProductCard";
 import SearchBar from "../SearchBar/SearchBar";
 import ErrorMessage from "../ErrorComponent/ErrorComponent";
+import Paginator from "../Paginator/Paginator";
 
-const ProductGrid = ({ data }) => {
+const ProductGrid = ({ data, currentPage, paginate, totalPages }) => {
   const [products, setProducts] = useState(data);
 
+  useEffect(() => {
+    setProducts(data);
+  }, [data]);
+
   return (
-    <div className="xl:max-w-5xl md:max-w-2xl max-w-xs mx-auto my-10">
+    <div className="xl:max-w-5xl md:max-w-2xl max-w-xs mx-auto mt-10 mb-5">
       <SearchBar search={(text) => setProducts(text)} items={data} />
       {products.length > 0 ? (
-        <div className="grid xl:grid-cols-3 gap-14 justify-items-center md:grid-cols-2 grid-cols-1">
-          {products.map((item) => {
-            return <ProductCard key={item["_id"]} itemData={item} />;
-          })}
-        </div>
+        <>
+          <div className="grid xl:grid-cols-3 gap-14 justify-items-center md:grid-cols-2 grid-cols-1">
+            {products.map((item) => {
+              return <ProductCard key={item["_id"]} itemData={item} />;
+            })}
+          </div>
+          <Paginator
+            currentPage={currentPage}
+            paginate={paginate}
+            totalPages={totalPages}
+          />
+        </>
       ) : (
         <ErrorMessage message="No such item exists!" />
       )}

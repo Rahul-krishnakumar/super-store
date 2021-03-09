@@ -42,11 +42,6 @@ const SearchBar = ({ search, items }) => {
         >
           <IoCloseSharp />
         </button>
-        {/* <button
-          onSubmit={(e) => e.preventDefault()}
-          className="flex-shrink-0 bg-blue-700 border-blue-700 text-sm font-semibold border-4 text-blue-200 py-1 px-2 rounded hover:bg-blue-800 hover:border-blue-800"
-        > */}
-        {/* </button> */}
       </form>
     </div>
   );
