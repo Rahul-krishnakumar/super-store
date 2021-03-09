@@ -18,8 +18,12 @@ const ItemCard = ({ itemData }) => {
   let badge = stockCount === 0 ? "empty" : isOnSale ? "sale" : null;
   return (
     <div className="w-full mt-4 border-2 rounded-md shadow-sm p-5 flex flex-col">
-      <img src={imageUrl} alt={name} className="w-full h-48" />
-      <h3 className="text-lg font-semibold mt-10">{name}</h3>
+      <div className="flex justify-center">
+        <img src={imageUrl} alt={name} className="h-52" />
+      </div>
+      <Link className="text-lg font-semibold mt-10" to={`/item/${_id}`}>
+        {name}
+      </Link>
       <div className="flex justify-between -ml-1">
         <Ratings rating={avgRating} />
         <Badge type={badge} />

@@ -9,7 +9,7 @@ import Product from "./Pages/Product";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App overflow-x-hidden">
       <Switch>
         <Route path="/deals">
           <Deals />
@@ -20,7 +20,7 @@ function App() {
         <Route path="/home">
           <Home />
         </Route>
-        <Route path="/item/:id">
+        <Route exact path="/item/:id">
           <Product />
         </Route>
         <Route path="/">
