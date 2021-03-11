@@ -2,7 +2,7 @@ import React from "react";
 
 const Paginator = ({ currentPage, paginate, totalPages }) => {
   return (
-    <div className="flex gap-2 max-w-xs mx-auto my-10">
+    <div className="flex justify-center gap-2 max-w-xs mx-auto my-10">
       <button
         className="border-2 border-gray-200 shadow-sm rounded bg-gray-200 text-gray-900 font-semibold px-2 py-1"
         onClick={() => paginate(1)}

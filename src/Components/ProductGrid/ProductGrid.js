@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 import ProductCard from "../ProductCard/ProductCard";
-import SearchBar from "../SearchBar/SearchBar";
 import ErrorMessage from "../ErrorComponent/ErrorComponent";
 import Paginator from "../Paginator/Paginator";
 
@@ -14,7 +13,6 @@ const ProductGrid = ({ data, currentPage, paginate, totalPages }) => {
 
   return (
     <div className="xl:max-w-5xl md:max-w-2xl max-w-xs mx-auto mt-10 mb-5">
-      <SearchBar search={(text) => setProducts(text)} items={data} />
       {products.length > 0 ? (
         <>
           <div className="grid xl:grid-cols-3 gap-14 justify-items-center md:grid-cols-2 grid-cols-1">
