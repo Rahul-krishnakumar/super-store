@@ -25,6 +25,11 @@ const Home = () => {
     setCurrentPage(page);
   };
 
+  const search = (term) => {
+    setQuery(term);
+    setCurrentPage(1);
+  };
+
   return (
     <div className="grid grid-rows-layout mt-10">
       <Navbar
@@ -39,7 +44,7 @@ const Home = () => {
           <ErrorComponent message={error.toString()} />
         ) : (
           <>
-            <SearchBar search={(term) => setQuery(term)} />
+            <SearchBar search={search} />
             <ProductGrid
               data={items}
               currentPage={currentPage}

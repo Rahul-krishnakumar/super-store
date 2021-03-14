@@ -7,7 +7,6 @@ const SearchBar = ({ search }) => {
   const [text, setText] = useState("");
   const searchTerm = (e) => {
     e.preventDefault();
-    console.log(text);
     search(text);
   };
 
