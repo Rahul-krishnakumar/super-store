@@ -349,6 +349,7 @@ module.exports = {
       4: "repeat(4, minmax(0, 1fr))",
       5: "repeat(5, minmax(0, 1fr))",
       6: "repeat(6, minmax(0, 1fr))",
+      layout: "4rem auto",
     },
     height: (theme) => ({
       auto: "auto",

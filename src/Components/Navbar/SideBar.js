@@ -19,7 +19,7 @@ const SideBar = ({ links, open }) => {
                 <NavLink
                   exact
                   to={`/${Object.entries(link)[0][0].toString().toLowerCase()}`}
-                  activeClassName="font-bold text-white border-2 rounded-sm p-1 -ml-1 border-white"
+                  activeClassName="font-bold text-white border-2 rounded-sm px-2 py-1 -ml-1 border-white"
                 >
                   {Object.entries(link)[0][0]}
                 </NavLink>

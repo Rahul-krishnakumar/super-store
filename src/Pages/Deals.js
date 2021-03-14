@@ -1,26 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import useFetch from "../Hooks/useFetch";
 
 import Navbar from "../Components/Navbar/Navbar";
 import ProductGrid from "../Components/ProductGrid/ProductGrid";
 import ErrorComponent from "../Components/ErrorComponent/ErrorComponent";
 import Spinner from "../Components/Spinner/Spinner";
+import SearchBar from "../Components/SearchBar/SearchBar";
 
 const Deals = () => {
-  const [items, setItems] = useState([]);
-  const [isLoading, setisLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [query, setQuery] = useState("");
 
-  useEffect(() => {
-    fetch(`https://gp-super-store-api.herokuapp.com/item/list/?isOnSale=true`)
-      .then((res) => res.json())
-      .then((data) => {
-        setItems(data.items);
-        setisLoading(false);
-      })
-      .catch((error) => console.log(error));
-  }, []);
+  const productsPerPage = 6;
+  const lastProductIndex = currentPage * productsPerPage - 1;
+  const firstProductIndex = lastProductIndex - productsPerPage + 1;
+
+  const { items, totalItems, loading, error } = useFetch(
+    `https://gp-super-store-api.herokuapp.com/item/list/?from=${firstProductIndex}&size=${productsPerPage}&q=${query}&isOnSale=true`
+  );
+
+  const totalPages = Math.ceil(totalItems / productsPerPage);
+
+  const paginate = (page) => {
+    setCurrentPage(page);
+  };
 
   return (
-    <div>
+    <div className="grid grid-rows-layout mt-10">
       <Navbar
         links={[
           { Home: "/", id: 1 },
@@ -28,11 +34,21 @@ const Deals = () => {
           { Cart: "/cart", id: 3 },
         ]}
       />
-      {!isLoading ? (
+      {error ? (
+        <ErrorComponent message={error.toString()} />
+      ) : !loading ? (
         items.length <= 0 ? (
           <ErrorComponent message="No items on sale right now!" />
         ) : (
-          <ProductGrid data={items} />
+          <>
+            <SearchBar search={(term) => setQuery(term)} />
+            <ProductGrid
+              data={items}
+              currentPage={currentPage}
+              paginate={paginate}
+              totalPages={totalPages}
+            />
+          </>
         )
       ) : (
         <Spinner />
