@@ -12,7 +12,7 @@ const ProductGrid = ({ data, currentPage, paginate, totalPages }) => {
   }, [data]);
 
   return (
-    <div className="xl:max-w-5xl md:max-w-2xl max-w-xs mx-auto mt-10 mb-5">
+    <div className="xl:min-w-5xl md:min-w-2xl w-80 mx-auto mt-10 mb-5">
       {products.length > 0 ? (
         <>
           <div className="grid xl:grid-cols-3 gap-14 justify-items-center md:grid-cols-2 grid-cols-1">
